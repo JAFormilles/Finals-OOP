@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Team {
     private ArrayList<String> achievements;
     private Region region;
+    private ArrayList<Player> players;
     
     
     public Team(ArrayList<String> achievements, Region region){
@@ -38,4 +39,6 @@ public class Team {
     public Region getRegion(){
         return region;
     }
+    
+    
 }
