@@ -8,7 +8,7 @@ package finalsoop;
  *
  * @author joloos
  */
-public class FinalsOOP {
+public class Main {
 
     /**
      * @param args the command line arguments
