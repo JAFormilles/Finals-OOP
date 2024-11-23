@@ -20,8 +20,6 @@ public class Player extends Person{
         return teamAchievements;
     }
     
-    
-    
     public void addPersonalAchievement(String userAchievement){
         if(personalAchievements.contains(userAchievement)){
             System.out.println("Achievement already exists.");

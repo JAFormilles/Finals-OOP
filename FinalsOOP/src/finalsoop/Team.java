@@ -17,6 +17,9 @@ public class Team {
     }
     
     //Setter n Getter
+    public void addToTeam(Player player){
+        members.add(player);
+    }
     public void setTeamName(String teamName){
         this.teamName = teamName;
     }

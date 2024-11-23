@@ -1,0 +1,22 @@
+[1] Create Team 
+- Prompt user to enter team name, region
+- if it already exists prevent creation
+
+[2] Create Person 
+- Prompt user if its player or coach, 
+ If player:
+- prompt user for username, role
+- if it already exists prevent creation
+ If coach:
+- prompt user for username
+- if it already exists prevent creation
+
+[3] Search Team
+- Display all teams and prompt user to type the team name to be accessed.
+- Display menu for displaying details, updating attributes, and deleting
+- Remember to update status of player after deleting team to free agent
+
+[4] Search Person
+- Display all players and prompt user to type the username to be accessed.
+- Display menu for displaying details, updating attributes, and deleting
+- Remember to delete player from team
