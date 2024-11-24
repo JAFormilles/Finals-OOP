@@ -2,6 +2,7 @@ package finalsoop;
 import java.util.ArrayList;
 
 public class Player extends Person{
+    private String username;
     private Role role;
     private Status status;
     private ArrayList <String> teamAchievements;
@@ -51,5 +52,13 @@ public class Player extends Person{
     }
     public Status getStatus(){
         return status;
+    }
+    
+    public void setUsername(String username){
+        this.username = username;
+    }
+    
+    public String getUsername(){
+        return username;
     }
 }

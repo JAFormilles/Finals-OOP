@@ -1,10 +1,10 @@
 package finalsoop;
 
 public enum Role {
-    Top,
-    Jungle,
-    Middle,
-    Bottom,
-    Support,
-    Coach
+    TOP,
+    JUNGLE,
+    MIDDLE,
+    BOTTOM,
+    SUPPORT,
+    COACH
 }

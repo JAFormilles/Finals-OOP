@@ -7,7 +7,12 @@ public class Team {
     private Region region;
     private ArrayList<Player> members;
     
-    
+    public Team(){
+        teamName = null;
+        achievements = null;
+        region = null;
+        members = null;
+    }
     public Team(String teamName, Region region){
         this.teamName = teamName;
         this.region = region;
@@ -17,7 +22,7 @@ public class Team {
     }
     
     //Setter n Getter
-    public void addToTeam(Player player){
+    public void addMember(Player player){
         members.add(player);
     }
     public void setTeamName(String teamName){
@@ -42,7 +47,7 @@ public class Team {
     public void removeAchievement(String userAchievement){
         if(achievements.contains(userAchievement)){
             achievements.remove(userAchievement);
-            for(Player member : members){
+            for(Player member : members){  
             member.removeTeamAchievement(userAchievement);
             }
             System.out.println("Achievement removed: " + userAchievement);
