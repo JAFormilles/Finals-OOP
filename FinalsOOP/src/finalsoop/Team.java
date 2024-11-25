@@ -70,4 +70,17 @@ public class Team {
     public boolean doesTeamExist(String teamNameInput){
     return teamNameInput.equals(teamName);
     }
+    
+    public ArrayList<Player> getMembers(){
+        return members;
+    }
+    
+    public void removeMember(Player playerToRemove){
+        Player toRemove = null;
+        String playerToRemoveUsername = playerToRemove.getUsername();
+        for(Player member : members){
+            if(member.getUsername().equals(playerToRemoveUsername));
+        }
+                
+    }
 }

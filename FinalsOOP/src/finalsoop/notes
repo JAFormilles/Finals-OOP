@@ -20,3 +20,16 @@
 - Display all players and prompt user to type the username to be accessed.
 - Display menu for displaying details, updating attributes, and deleting
 - Remember to delete player from team
+
+Team Menu
+- Display Details
+- Add Player/Coach
+- Remove Player/Coach
+- Add Team Achievement - Apply this change to players and coach
+- Remove Team Achievement - Apply this change to players and coach
+
+Player/Coach Menu
+- Display Details
+- Change Status 
+Retire - Remove from Team and Change Status
+- Change Role

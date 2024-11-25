@@ -32,23 +32,33 @@ public class Main {
             case 1->{ //Create Team
                 // TODO: Prevent Creation if Team Already Exists
                 Team tempTeam = new Team();
-                String teamNameInput = null;
-                Region userRegion = null;
-                
+                boolean doesTeamExist = false;
                 System.out.print("Enter Team Name: ");
                 input.nextLine();
-                teamNameInput = input.nextLine();
+                String teamNameInput = input.nextLine();
                 tempTeam.setTeamName(teamNameInput);
                 
+                for (Team team : Teams) {
+                if(team.doesTeamExist(teamNameInput)){
+                    doesTeamExist = true;
+                    }
+                else{
+                    doesTeamExist = false;
+                    }
+                }
+                
+                if(doesTeamExist == false){
                 System.out.println("(LCK LPL LEC LTA LCP)");
                 System.out.print("Enter Region choice: ");
                 String regionChoice = input.nextLine().toUpperCase();
-                userRegion = Region.valueOf(regionChoice);
+                Region userRegion = Region.valueOf(regionChoice);
                 tempTeam.setRegion(userRegion);
                 
                 Teams.add(tempTeam);
                 System.out.println("Team Created Successfully.");
-                
+                }else{
+                    System.out.println("Team Already Exists!");
+                }
                 
             }
             case 2->{ //Create Person/Player/Coach
@@ -148,5 +158,74 @@ public class Main {
             }
         }
     }
+    
+    public static void teamMenu(Team team) {
+    while (true) {
+        System.out.println("\nTeam Menu:");
+        System.out.println("[1] Display Team Details");
+        System.out.println("[2] Add Player/Coach");
+        System.out.println("[3] Remove Player/Coach");
+        System.out.println("[4] Add Team Achievement");
+        System.out.println("[5] Remove Team Achievement");
+        System.out.println("[6] Exit Team Menu");
+        System.out.print("Choice: ");
+        int choice = input.nextInt();
+        input.nextLine(); 
+
+        switch (choice) {
+            case 1 -> {
+                System.out.println("Team Name: " + team.getTeamName());
+                System.out.println("Region: " + team.getRegion());
+                System.out.println("Achievements: " + team.getAchievements());
+                System.out.println("Members: ");
+                for (Player member : team.getMembers()) {
+                    System.out.println(" - " + member.getUsername() + " (" + member.getRole() + ")");
+                }
+            }
+            case 2 -> {
+                System.out.print("Enter Player/Coach Username: ");
+                String username = input.nextLine();
+                Player existingPlayer = searchPlayerByUsername(username);
+                if (existingPlayer != null) {
+                    team.addMember(existingPlayer);
+                    System.out.println("Player/Coach added successfully.");
+                } else {
+                    System.out.println("Player/Coach not found. Please enter a valid username.");
+                }
+            }
+            case 3 -> {
+                System.out.print("Enter Username to remove: ");
+                String username = input.nextLine();
+                Player playerToRemove = null;
+                for (Player member : team.getMembers()) {
+                    if (member.getUsername().equalsIgnoreCase(username)) {
+                        playerToRemove = member;
+                        break;
+                    }
+                }
+                if (playerToRemove != null) {
+                    team.removeMember(playerToRemove);
+                    System.out.println("Player/Coach removed successfully.");
+                } else {
+                    System.out.println("Player/Coach not found.");
+                }
+            }
+            case 4 -> {
+                System.out.print("Enter Achievement to add: ");
+                String achievement = input.nextLine();
+                team.addAchievement(achievement);
+            }
+            case 5 -> {
+                System.out.print("Enter Achievement to remove: ");
+                String achievement = input.nextLine();
+                team.removeAchievement(achievement);
+            }
+            case 6 -> {
+                return; 
+            }
+            default -> System.out.println("Invalid choice. Please try again.");
+        }
+    }
+}
 }
  
