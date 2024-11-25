@@ -66,4 +66,8 @@ public class Team {
     public Region getRegion(){
         return region;
     }
+    
+    public boolean doesTeamExist(String teamNameInput){
+    return teamNameInput.equals(teamName);
+    }
 }

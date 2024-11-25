@@ -13,8 +13,8 @@ import java.util.Scanner;
 
 public class Main {
     public static Scanner input = new Scanner(System.in);
-    public static ArrayList <Team> Teams;
-    public static ArrayList <Player> Players;
+    public static ArrayList <Team> Teams = new ArrayList<>();
+    public static ArrayList <Player> Players = new ArrayList<>();
         
     public static void main(String[] args) {
         while(true){
@@ -72,11 +72,31 @@ public class Main {
                     
                 }
             }
-            case 3->{
-                
+            case 3->{ //Search Teams
+                displayAllTeams();
+                System.out.print("Enter Team Name to search: ");
+                    input.nextLine();
+                    String searchTeamName = input.nextLine();
+                    Team foundTeam = searchTeamByName(searchTeamName);
+                    
+                    if (foundTeam != null) {
+                        System.out.println("Team found: " + foundTeam.getTeamName() + " in " + foundTeam.getRegion());
+                    } else {
+                        System.out.println("Team not found.");
+                    }
             }
-            case 4->{
-                
+            case 4->{ //Search Players
+                displayAllPlayers();
+                System.out.print("Enter Player Username to search: ");
+                    input.nextLine();
+                    String searchUsername = input.nextLine();
+                    Player foundPlayer = searchPlayerByUsername(searchUsername);
+                    
+                    if (foundPlayer != null) {
+                        System.out.println("Player found: " + foundPlayer.getUsername());
+                    } else {
+                        System.out.println("Player not found.");
+                    }
             }
             case 5->{
                 choice = 5;
@@ -87,6 +107,46 @@ public class Main {
             }
         }
     }
+    public static Team searchTeamByName(String teamName) {
+        for (Team team : Teams) {
+            if (team.getTeamName().equalsIgnoreCase(teamName)) {
+                return team;
+            }
+        }
+        return null;
+    }
+
+    public static Player searchPlayerByUsername(String username) {
+        for (Player player : Players) {
+            if (player.getUsername().equalsIgnoreCase(username)) {
+                return player;
+            }
+        }
+        return null;
+    }
     
+        public static void displayAllPlayers() {
+        if (Players.isEmpty()) {
+            System.out.println("No players available.");
+        } else {
+            System.out.println("List of Players:");
+            System.out.println("[Username] - [Role]");
+            for (Player player : Players) {
+                System.out.println(player.getUsername() + " - " + player.getRole());
+            }
+        }
+    }
+
+    public static void displayAllTeams() {
+        if (Teams.isEmpty()) {
+            System.out.println("No teams available.");
+        } else {
+            System.out.println("List of Teams:");
+            System.out.println("[Team Name] - [Region]");
+            for (Team team : Teams) {
+                System.out.println(team.getTeamName() + " - " + team.getRegion());
+            }
+        }
+    }
 }
  

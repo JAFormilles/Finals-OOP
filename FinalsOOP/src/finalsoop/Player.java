@@ -61,4 +61,8 @@ public class Player extends Person{
     public String getUsername(){
         return username;
     }
+    
+    public boolean doesPlayerExist(String usernameInput){
+    return usernameInput.equals(username);
+    }
 }
