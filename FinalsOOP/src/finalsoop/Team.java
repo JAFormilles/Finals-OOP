@@ -77,9 +77,16 @@ public class Team {
     
     public void removeMember(Player playerToRemove){
         Player toRemove = null;
+        
         String playerToRemoveUsername = playerToRemove.getUsername();
         for(Player member : members){
-            if(member.getUsername().equals(playerToRemoveUsername));
+            if(member.getUsername().equals(playerToRemoveUsername)){
+                toRemove = member;
+                break;
+            }
+        }
+        if(toRemove != null){
+            members.remove(toRemove);
         }
                 
     }
