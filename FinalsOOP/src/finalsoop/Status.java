@@ -1,8 +1,8 @@
 package finalsoop;
 
 public enum Status {
-    Active,
-    Unsigned,
-    Retired
+    ACTIVE,
+    UNSIGNED,
+    RETIRED
     
 }

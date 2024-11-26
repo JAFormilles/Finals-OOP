@@ -8,6 +8,13 @@ public class Player extends Person{
     private ArrayList <String> teamAchievements;
     private ArrayList <String> personalAchievements;
     
+    Player(){
+        username = null;
+        role = null;
+        status = Status.UNSIGNED;  
+        teamAchievements = new ArrayList<>();
+        personalAchievements = new ArrayList<>();
+    }
     public void addTeamAchievement(String userAchievement){
         teamAchievements.add(userAchievement);
     }

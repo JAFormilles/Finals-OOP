@@ -12,6 +12,8 @@ public class Team {
         achievements = null;
         region = null;
         members = null;
+        achievements = new ArrayList<>();
+        members = new ArrayList<>();
     }
     public Team(String teamName, Region region){
         this.teamName = teamName;

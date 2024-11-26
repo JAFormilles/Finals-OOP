@@ -10,6 +10,7 @@ Pitargue, Linus Abel
 package finalsoop;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static Scanner input = new Scanner(System.in);
@@ -17,7 +18,9 @@ public class Main {
     public static ArrayList <Player> Players = new ArrayList<>();
         
     public static void main(String[] args) {
+        
         while(true){
+        try{
         System.out.println("");
         System.out.println("""
                            [1] Create Team
@@ -27,7 +30,19 @@ public class Main {
                            [5] Exit
                            """);
         System.out.print("Choice: ");
-        int choice = input.nextInt();
+        int choice = 0;
+        try{
+           choice = input.nextInt(); 
+        } 
+        catch(InputMismatchException e){
+            System.out.println("Incorrect Input.");
+            input.nextLine();
+        }
+        catch (Exception e){
+            System.out.println("Error Occured.");
+            input.nextLine();
+        }
+        
         switch(choice){
             case 1->{ //Create Team
                 // TODO: Prevent Creation if Team Already Exists
@@ -51,7 +66,7 @@ public class Main {
                 
                 if(doesTeamExist == false){
                 System.out.println("(LCK LPL LEC LTA LCP)");
-                System.out.print("Enter Region choice: ");
+                System.out.print("Enter Region: ");
                 String regionChoice = input.nextLine().toUpperCase();
                 Region userRegion = Region.valueOf(regionChoice);
                 tempTeam.setRegion(userRegion);
@@ -73,15 +88,17 @@ public class Main {
                     Player tempPlayer = new Player();
 
                     System.out.print("Enter Player's Username: ");
+                    input.nextLine();
                     String usernameInput = input.nextLine();
                     tempPlayer.setUsername(usernameInput);
                     
                     System.out.println("(Top, Jungle, Middle, Bottom, Support)");
-                    System.out.print("Enter Region choice: ");
+                    System.out.print("Enter Role: ");
                     String roleInput = input.nextLine().toUpperCase();
                     Role roleChoice = Role.valueOf(roleInput);
                     tempPlayer.setRole(roleChoice);
                     
+                    Players.add(tempPlayer);
                 }
             }
             case 3->{ //Search Teams
@@ -108,17 +125,30 @@ public class Main {
                     
                     if (foundPlayer != null) {
                         System.out.println("Player found: " + foundPlayer.getUsername());
+                        playerCoachMenu(foundPlayer);
                     } else {
                         System.out.println("Player not found.");
                     }
+                
             }
             case 5->{
                 choice = 5;
+            }
+            default ->{
+                continue;
             }
         }
         if(choice == 5){
            break; 
             }
+        }
+        catch(InputMismatchException e){
+            System.out.println("Incorrect Input.");
+            input.nextLine();
+        }
+        catch(Exception e){
+                System.out.println("Error Occurred.");
+                }
         }
     }
     public static Team searchTeamByName(String teamName) {
@@ -223,12 +253,12 @@ public class Main {
                         System.out.println("Player/Coach not found.");
                     }
                 }
-                case 4 -> {
+                case 4 -> { // Add Team Achievement
                     System.out.print("Enter Achievement to add: ");
                     String achievement = input.nextLine();
                     team.addAchievement(achievement);
                 }
-                case 5 -> {
+                case 5 -> { // Remove Team Achievement
                     System.out.print("Enter Achievement to remove: ");
                     String achievement = input.nextLine();
                     team.removeAchievement(achievement);
@@ -240,5 +270,81 @@ public class Main {
             }
         }
     }
+    
+    public static void playerCoachMenu(Player player) {
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPlayer/Coach Menu:");
+            System.out.println("[1] Display Details");
+            System.out.println("[2] Change Status");
+            System.out.println("[3] Retire");
+            System.out.println("[4] Change Role");
+            System.out.println("[5] Add Personal Achievement");
+            System.out.println("[6] Remove Personal Achievement");
+            System.out.println("[7] Exit");
+            System.out.print("Choice: ");
+            int choice = input.nextInt();
+            input.nextLine();
+
+            switch (choice) {
+                case 1 -> { // Display Details
+                    System.out.println("Player/Coach Details:");
+                    System.out.println("Name: " + player.getUsername());
+                    System.out.println("Status: " + player.getStatus());
+                    System.out.println("Role: " + player.getRole());
+                    System.out.println("Team Achievements: ");
+                    System.out.println(player.getTeamAchievements());
+                    System.out.println("Personal Achievements: ");
+                    System.out.println(player.getPersonalAchievements());
+                }
+                case 2 -> { // Change Status
+                    System.out.println("(Active, Unsigned, Retired");
+                    System.out.print("Enter Status: ");
+                    String newStatus = input.nextLine();
+                    String statusChoice = input.nextLine().toUpperCase();
+                    Status userStatus = Status.valueOf(statusChoice);
+                    player.setStatus(userStatus);
+                    System.out.println("Status updated to: " + userStatus);
+                   
+                    System.out.println("Status updated to: " + newStatus);
+                }
+                case 3 -> { // Retire
+                    player.setStatus(Status.RETIRED);
+                    for(Team team : Teams){
+                        team.removeMember(player);
+                    }
+                    System.out.println(player.getUsername() + " has been retired.");
+                    return;
+                }
+                case 4 -> { // Change Role
+                    System.out.println("(TOP, JUNGLE, MIDDLE, BOTTOM, ADC");
+                    System.out.print("Enter Role choice: ");
+                    String newRole = input.nextLine();
+                    String roleChoice = input.nextLine().toUpperCase();
+                    Status userRole = Status.valueOf(roleChoice);
+                    player.setStatus(userRole);
+                    System.out.println("Role updated to: " + userRole);
+                }
+                case 5 -> { // Add personal Achievement
+                    System.out.print("Enter Achievement to add: ");
+                    String achievement = input.nextLine();
+                    player.addPersonalAchievement(achievement);
+                }
+                
+                case 6 -> { // Remove Personal Achievement
+                    System.out.print("Enter Achievement to remove: ");
+                    String achievement = input.nextLine();
+                    player.removePersonalAchievement(achievement);
+                }
+                case 7 -> { //Exit Menu
+                    System.out.println("Exiting menu.");
+                    return;
+                }
+                default -> System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
 }
  
