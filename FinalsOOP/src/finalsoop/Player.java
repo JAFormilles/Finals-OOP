@@ -2,11 +2,11 @@ package finalsoop;
 import java.util.ArrayList;
 
 public class Player extends Person{
-    private String username;
-    private Role role;
-    private Status status;
-    private ArrayList <String> teamAchievements;
-    private ArrayList <String> personalAchievements;
+    protected String username;
+    protected Role role;
+    protected Status status;
+    protected ArrayList <String> teamAchievements;
+    protected ArrayList <String> personalAchievements;
     
     Player(){
         username = null;
@@ -30,10 +30,10 @@ public class Player extends Person{
     
     public void addPersonalAchievement(String userAchievement){
         if(personalAchievements.contains(userAchievement)){
-            System.out.println("Achievement already exists.");
+            System.out.println("Personal Achievement already exists.");
         } else {
             personalAchievements.add(userAchievement);
-            System.out.println("Achievement added: " + userAchievement);
+            System.out.println("Personal Achievement added: " + userAchievement);
         }
     }
     public void removePersonalAchievement(String userAchievement){
@@ -70,6 +70,6 @@ public class Player extends Person{
     }
     
     public boolean doesPlayerExist(String usernameInput){
-    return usernameInput.equals(username);
+    return usernameInput.equalsIgnoreCase(username);
     }
 }

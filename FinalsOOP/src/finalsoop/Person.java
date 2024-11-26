@@ -1,9 +1,9 @@
 package finalsoop;
 
 public abstract class Person {
-    private String username;
+    protected String username;
     
-    private String Nationality;
+    protected String Nationality;
     
     public void setUsername(String username){
         this.username = username;

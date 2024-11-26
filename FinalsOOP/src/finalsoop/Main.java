@@ -86,11 +86,23 @@ public class Main {
                 int personChoice = input.nextInt();
                 if(personChoice == 1){
                     Player tempPlayer = new Player();
-
+                    boolean doesPlayerExist = false;
                     System.out.print("Enter Player's Username: ");
                     input.nextLine();
                     String usernameInput = input.nextLine();
-                    tempPlayer.setUsername(usernameInput);
+                    for(Player player : Players){
+                        if(player.doesPlayerExist(usernameInput)){
+                            doesPlayerExist = true;
+                            break;
+                        }
+                    }
+                    if(doesPlayerExist){
+                        System.out.println("Player Already Exists.");
+                        continue;
+                    } else {
+                        tempPlayer.setUsername(usernameInput);
+                    }
+                    
                     
                     System.out.println("(Top, Jungle, Middle, Bottom, Support)");
                     System.out.print("Enter Role: ");
@@ -99,6 +111,31 @@ public class Main {
                     tempPlayer.setRole(roleChoice);
                     
                     Players.add(tempPlayer);
+                    System.out.println("Player Created Successfully.");
+                }
+                else if(personChoice == 2){
+                    Coach tempCoach = new Coach();
+                    boolean doesPlayerExist = false;
+
+                    System.out.print("Enter Coach's Username: ");
+                    input.nextLine();
+                    String usernameInput = input.nextLine();
+                    for(Player player : Players){
+                        if(player.doesPlayerExist(usernameInput)){
+                            doesPlayerExist = true;
+                            break;
+                        }
+                    }
+                    if(doesPlayerExist){
+                        System.out.println("Player Already Exists.");
+                        continue;
+                    } else{
+                        tempCoach.setUsername(usernameInput);
+                        tempCoach.setRole(Role.COACH);
+                        Players.add(tempCoach);
+                        System.out.println("Player Created Successfully.");
+                    }
+
                 }
             }
             case 3->{ //Search Teams

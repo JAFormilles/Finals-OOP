@@ -37,7 +37,7 @@ public class Team {
     
     public void addAchievement(String userAchievement){
         if(achievements.contains(userAchievement)){
-            System.out.println("Achievement already exists.");
+            System.out.println("Team Achievement already exists.");
         } else {
         achievements.add(userAchievement);
         for(Player member : members){
@@ -52,9 +52,9 @@ public class Team {
             for(Player member : members){  
             member.removeTeamAchievement(userAchievement);
             }
-            System.out.println("Achievement removed: " + userAchievement);
+            System.out.println("Team Achievement removed: " + userAchievement);
         } else {
-            System.out.println("Achievement not found: " + userAchievement);
+            System.out.println("Team Achievement not found: " + userAchievement);
         }
     }
     public ArrayList<String> getAchievements(){
