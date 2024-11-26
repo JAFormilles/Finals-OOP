@@ -231,6 +231,7 @@ public class Main {
                     Player existingPlayer = searchPlayerByUsername(username);
                     if (existingPlayer != null) {
                         team.addMember(existingPlayer);
+                        existingPlayer.setStatus(Status.ACTIVE);
                         System.out.println("Player/Coach added successfully.");
                     } else {
                         System.out.println("Player/Coach not found. Please enter a valid username.");
@@ -248,6 +249,7 @@ public class Main {
                     }
                     if (playerToRemove != null) {
                         team.removeMember(playerToRemove);
+                        playerToRemove.setStatus(Status.UNSIGNED);
                         System.out.println("Player/Coach removed successfully.");
                     } else {
                         System.out.println("Player/Coach not found.");
@@ -299,16 +301,18 @@ public class Main {
                     System.out.println(player.getPersonalAchievements());
                 }
                 case 2 -> { // Change Status
-                    System.out.println("(Active, Unsigned, Retired");
+                    System.out.println("(ACTIVE,INACTIVE, UNSIGNED, RETIRED)");
                     System.out.print("Enter Status: ");
-                    String newStatus = input.nextLine();
-                    String statusChoice = input.nextLine().toUpperCase();
-                    Status userStatus = Status.valueOf(statusChoice);
-                    player.setStatus(userStatus);
-                    System.out.println("Status updated to: " + userStatus);
-                   
-                    System.out.println("Status updated to: " + newStatus);
+                    String statusChoice = input.nextLine().toUpperCase(); 
+                    try {
+                        Status userStatus = Status.valueOf(statusChoice); 
+                        player.setStatus(userStatus); 
+                        System.out.println("Status updated to: " + userStatus);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Invalid status entered. Please enter ACTIVE,INACTIVE, UNSIGNED, RETIRED.");
+                    }
                 }
+                
                 case 3 -> { // Retire
                     player.setStatus(Status.RETIRED);
                     for(Team team : Teams){
@@ -318,14 +322,22 @@ public class Main {
                     return;
                 }
                 case 4 -> { // Change Role
-                    System.out.println("(TOP, JUNGLE, MIDDLE, BOTTOM, ADC");
-                    System.out.print("Enter Role choice: ");
-                    String newRole = input.nextLine();
-                    String roleChoice = input.nextLine().toUpperCase();
-                    Status userRole = Status.valueOf(roleChoice);
-                    player.setStatus(userRole);
-                    System.out.println("Role updated to: " + userRole);
-                }
+                    if (player.getRole() == Role.COACH) { 
+                        System.out.println("Coaches cannot change their role.");
+                    } else {
+                        System.out.println("(TOP, JUNGLE, MIDDLE, BOTTOM, ADC)");
+                        System.out.print("Enter Role choice: ");
+                        String roleChoice = input.nextLine().toUpperCase(); // Read input once and convert to uppercase
+
+                        try {
+                            Role userRole = Role.valueOf(roleChoice); // Convert input to Role enum
+                            player.setRole(userRole); // Set the player's role
+                            System.out.println("Role updated to: " + userRole);
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("Invalid role entered. Please enter a valid role (TOP, JUNGLE, MIDDLE, BOTTOM, ADC).");
+                        }
+                    }
+            }
                 case 5 -> { // Add personal Achievement
                     System.out.print("Enter Achievement to add: ");
                     String achievement = input.nextLine();
