@@ -5,34 +5,11 @@ Made by:
 Basit, Brian Joseph
 Formilles, Julius Andrei
 Makayan III, Amorsolo
-Pitargue, Linus Abel
-⠀⠀⠀⠀⠀⠀⠰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣤⣶⣤⣤⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠛⠛⠛⠛⠻⠿⠿⣿⣿⣷⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡀⣀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⣀⡀⠀⠀⠈⠛⢿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣾⣿⡿⠋⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡐⢆⠲⣈⠭⣉⠛⠿⢿⣿⣷⣤⡀⠀⠀⠙⢿⣿⣧⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣰⣿⡿⠋⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡜⣌⠳⣌⠲⣡⢋⡜⢢⢍⠻⢿⣿⣷⣄⠀⠀⠙⣿⣿⣆⠀⠀⠀⠀
-⠀⠀⠀⣰⣿⡿⠁⠀⠀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡒⣌⠳⣌⠓⢦⠓⡜⢣⢎⢣⡃⢟⢿⣿⣦⠀⠀⠈⢻⣿⣆⠀⠀⠀
-⠀⠀⣸⣿⡿⠀⠀⢀⣾⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡱⣊⠵⣊⡝⢎⡹⡜⢣⢎⡳⢜⡣⢎⣻⣿⣷⡀⠀⠈⢿⣿⣇⠀⠀
-⠀⢠⣿⣿⠃⠀⠀⣾⣿⢏⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡱⣍⢮⡑⣎⠧⣓⡜⣣⠞⡜⣬⢱⢫⡔⣻⣿⣧⡀⠀⠈⣿⣿⡄⠀
-⠀⣼⣿⡟⠀⠀⣸⣿⡿⣸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡱⢎⠶⣙⢦⡛⡴⣙⢦⡛⡜⢦⣋⠶⡹⣔⣻⣿⣇⠀⠀⢸⣿⣷⠀
-⢀⣿⣿⠅⠀⠀⣿⣿⣇⢳⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠵⣋⡞⡱⣎⠵⣣⠝⣦⢹⡜⣣⢎⡳⢵⢪⡼⣿⣿⡀⠀⠈⣿⣿⡀
-⠈⣿⣿⠀⠀⠀⣿⣿⢬⢳⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣋⢶⡩⢗⡜⣣⢧⡛⡴⣓⠮⣕⢮⠳⡭⢖⡳⣿⣿⡅⠀⠀⣿⣿⠆
-⠰⣿⣿⡀⠀⠀⣿⣿⣎⢳⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡱⢎⡵⢫⠼⡱⢎⡵⢣⡝⡺⡜⣎⢳⡙⢮⣱⣿⣿⠂⠀⠀⣿⣿⠅
-⠀⣿⣿⡆⠀⠀⣿⣿⣎⢳⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣱⢫⡜⣣⢏⡵⢫⡜⣣⢞⡱⡹⣌⢧⡙⢧⢺⣿⡿⠀⠀⢸⣿⡿⠀
-⠀⢹⣿⣿⠀⠀⠘⣿⣿⣪⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⢆⡳⣜⡱⢎⡜⣣⢞⡱⢎⡵⠳⡜⢦⡛⣼⣿⣿⠇⠀⠀⣾⣿⡟⠀
-⠀⠀⣿⣿⣇⠀⠀⠹⣿⣷⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⢎⠵⣪⢜⢣⠞⣡⢎⡵⢋⡴⢫⡜⡣⣝⣾⣿⠟⠀⠀⣰⣿⡿⠀⠀
-⠀⠀⠈⢿⣿⡄⠀⠀⠹⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠎⡵⢢⢫⡜⢎⡵⢊⠶⣩⢒⣇⡚⣵⣿⣿⠏⠀⠀⣠⣿⣿⠃⠀⠀
-⠀⠀⠀⠘⢿⣿⣤⠀⠀⠈⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡹⢜⣣⠳⡜⣣⠞⣩⠞⣡⠳⣼⣾⣿⡿⠁⠀⠀⣴⣿⡿⠁⠀⠀⠀
-⠀⠀⠀⠀⠈⠻⣿⣧⣀⠠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣼⣧⣶⣽⣼⣵⣮⣵⣯⣶⣿⣿⣿⣯⣤⣤⣤⣾⣿⣿⣥⣤⣤⣄⡀
-⠀⠀⠀⠀⠀⠀⠘⢿⣿⣧⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⣿⣿⣿⠟⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠿⠋⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡿⠋⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠰⣾⣟⣾⣽⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⣿⣻⣟⡿⣿⣻⠝⠁⠀⠀⠀⠀⠀
+Pitargue, Linus Abel⠀⠀
 */
 package finalsoop;
+import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -56,7 +33,8 @@ public class Main {
                            [2] Create Person
                            [3] Search Team
                            [4] Search Person
-                           [5] Exit
+                           [5] Generate File
+                           [6] Exit
                            """);
         System.out.print("Choice: ");
         int choice = 0;
@@ -197,14 +175,24 @@ public class Main {
                     }
                 
             }
-            case 5->{
-                choice = 5;
+            case 5->{ //Generate File
+                try(PrintWriter Writer = new PrintWriter("Teams.txt")){
+                 for(Team team : Teams){
+                     Writer.println(team.getTeamName());
+                 }
+            System.out.println("File Generated Successfully.");
+        }catch(IOException e){
+            System.out.println("Error Occurred: "+e.getMessage());
+        }
+            }
+            case 6->{ // Exit Program
+                choice = 6;
             }
             default ->{
                 continue;
             }
         }
-        if(choice == 5){
+        if(choice == 6){
            break; 
             }
         }
@@ -222,7 +210,6 @@ public class Main {
             if (team.getTeamName().equalsIgnoreCase(teamName)) {
                 return team;
             }
-            return null;
         }
         return null;
     }
@@ -288,21 +275,28 @@ public class Main {
                     }
                 }
                 case 2 -> { // Add Player/Coach
-                    if(Players.isEmpty()){
-                        System.out.println("No Player/Coach has been created.");
-                        break;
-                    }
-                    System.out.print("Enter Player/Coach Username: ");
-                    String username = input.nextLine();
-                    Player existingPlayer = searchPlayerByUsername(username);
-                    if (existingPlayer != null) {
+
+                if (Players.isEmpty()) {
+                    System.out.println("No Player/Coach has been created.");
+                    break;
+                    
+                }
+
+                System.out.print("Enter Player/Coach Username: ");
+                String username = input.nextLine();
+                Player existingPlayer = searchPlayerByUsername(username);
+                if (existingPlayer != null) {
+                    if (existingPlayer.getStatus() == Status.UNSIGNED) {
                         team.addMember(existingPlayer);
                         existingPlayer.setStatus(Status.ACTIVE);
-                        System.out.println("Player/Coach added successfully.");
+                        System.out.println("Player/Coach added successfully and status set to ACTIVE.");
                     } else {
-                        System.out.println("Player/Coach not found. Please enter a valid username.");
+                        System.out.println("Player/Coach is currently signed with another team.");
                     }
+                } else {
+                    System.out.println("Player/Coach not found. Please enter a valid username.");
                 }
+            }
                 case 3 -> { // Remove Player/Coach
                     System.out.print("Enter Username to remove: ");
                     String username = input.nextLine();
@@ -332,6 +326,7 @@ public class Main {
                     team.removeAchievement(achievement);
                 }
                 case 6 -> {
+                    
                     return; 
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
@@ -361,24 +356,58 @@ public class Main {
                     System.out.println("Name: " + player.getUsername());
                     System.out.println("Status: " + player.getStatus());
                     System.out.println("Role: " + player.getRole());
+                    
+                    String signedTeamName = "None (Currently Unsigned)";
+                        for (Team team : Teams) {
+
+                            if (team.getMembers().contains(player)) {
+
+                                signedTeamName = team.getTeamName();
+
+                                break; 
+
+                            }
+
+                        }
+                    System.out.println("Team Name: " + signedTeamName);
+
                     System.out.println("Team Achievements: ");
                     System.out.println(player.getTeamAchievements());
                     System.out.println("Personal Achievements: ");
                     System.out.println(player.getPersonalAchievements());
                 }
                 case 2 -> { // Change Status
-                    System.out.println("(ACTIVE,INACTIVE, UNSIGNED, RETIRED)");
-                    System.out.print("Enter Status: ");
-                    String statusChoice = input.nextLine().toUpperCase(); 
-                    try {
-                        Status userStatus = Status.valueOf(statusChoice); 
+
+                System.out.println("(ACTIVE, INACTIVE, RETIRED)");
+
+                System.out.print("Enter Status: ");
+
+                String statusChoice = input.nextLine().toUpperCase(); 
+
+
+                try {
+
+                    Status userStatus = Status.valueOf(statusChoice); 
+
+                    if (userStatus == Status.UNSIGNED && player.getStatus() != Status.UNSIGNED) {
+
+                        System.out.println("Cannot change status to UNSIGNED while the player is ACTIVE, INACTIVE, or RETIRED.");
+
+                    } else {
+
                         player.setStatus(userStatus); 
+
                         System.out.println("Status updated to: " + userStatus);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Invalid status entered. Please enter ACTIVE,INACTIVE, UNSIGNED, RETIRED.");
+
                     }
+
+                } catch (IllegalArgumentException e) {
+
+                    System.out.println("Invalid status entered. Please enter ACTIVE, INACTIVE, RETIRED.");
+
                 }
-                
+
+            }
                 case 3 -> { // Retire
                     player.setStatus(Status.RETIRED);
                     for(Team team : Teams){
