@@ -20,10 +20,9 @@ public class Main {
     public static ArrayList <Player> Players = new ArrayList<>();
         
     public static void main(String[] args) {
-        
+        clearScreen();
         while(true){
         try{
-        clearScreen();
         System.out.println("");
         System.out.println("""
                            ================================
@@ -52,7 +51,7 @@ public class Main {
         
         switch(choice){
             case 1->{ //Create Team
-                // TODO: Prevent Creation if Team Already Exists
+                clearScreen();
                 Team tempTeam = new Team();
                 boolean doesTeamExist = false;
                 System.out.print("Enter Team Name: ");
@@ -65,8 +64,7 @@ public class Main {
                 if(team.doesTeamExist(teamNameInput)){
                     doesTeamExist = true;
                     break;
-                    }
-                else{
+                    }else{
                     doesTeamExist = false;
                     }
                 }
@@ -86,6 +84,7 @@ public class Main {
                 
             }
             case 2->{ //Create Person/Player/Coach
+                clearScreen();
                 System.out.println("Choose what type to create:");
                 System.out.println("[1] Player");
                 System.out.println("[2] Coach");
@@ -146,6 +145,7 @@ public class Main {
                 }
             }
             case 3->{ //Search Teams
+                clearScreen();
                 displayAllTeams();
                 System.out.print("Enter Team Name to search: ");
                     input.nextLine();
@@ -161,6 +161,7 @@ public class Main {
                     
             }
             case 4->{ //Search Players
+                clearScreen();
                 displayAllPlayers();
                 System.out.print("Enter Player Username to search: ");
                     input.nextLine();
@@ -176,14 +177,27 @@ public class Main {
                 
             }
             case 5->{ //Generate File
+                clearScreen();
                 try(PrintWriter Writer = new PrintWriter("Teams.txt")){
+                    Writer.println("[Team Name - Region]");
                  for(Team team : Teams){
-                     Writer.println(team.getTeamName());
+                     Writer.println(team.getTeamName() + " - " + team.getRegion());
                  }
-            System.out.println("File Generated Successfully.");
+            System.out.println("Teams File Generated Successfully.");
         }catch(IOException e){
             System.out.println("Error Occurred: "+e.getMessage());
         }
+                
+                try(PrintWriter Writer = new PrintWriter("Players.txt")){
+                    Writer.println("[Username - Role]");
+                    for(Player player : Players){
+                        Writer.println(player.getUsername()+" - " + player.getRole());
+                    }
+                    System.out.println("Players File Generated Successfully.");
+                }catch(IOException e){
+                    System.out.println("Error Occurred: "+e.getMessage());
+                }
+            
             }
             case 6->{ // Exit Program
                 choice = 6;
@@ -255,13 +269,15 @@ public class Main {
         System.out.println("[3] Remove Player/Coach");
         System.out.println("[4] Add Team Achievement");
         System.out.println("[5] Remove Team Achievement");
-        System.out.println("[6] Exit Team Menu");
+        System.out.println("[6] Delete Team");
+        System.out.println("[7] Exit Team Menu");
         System.out.print("Choice: ");
         int choice = input.nextInt();
         input.nextLine(); 
 
         switch (choice) {
                 case 1 -> { //Display Team Details
+                    clearScreen();
                     System.out.println("Team Name: " + team.getTeamName());
                     System.out.println("Region: " + team.getRegion());
                     System.out.println("Achievements: " + team.getAchievements());
@@ -275,7 +291,7 @@ public class Main {
                     }
                 }
                 case 2 -> { // Add Player/Coach
-
+                clearScreen();
                 if (Players.isEmpty()) {
                     System.out.println("No Player/Coach has been created.");
                     break;
@@ -298,6 +314,7 @@ public class Main {
                 }
             }
                 case 3 -> { // Remove Player/Coach
+                    clearScreen();
                     System.out.print("Enter Username to remove: ");
                     String username = input.nextLine();
                     Player playerToRemove = null;
@@ -316,17 +333,34 @@ public class Main {
                     }
                 }
                 case 4 -> { // Add Team Achievement
+                    clearScreen();
                     System.out.print("Enter Achievement to add: ");
                     String achievement = input.nextLine();
                     team.addAchievement(achievement);
                 }
                 case 5 -> { // Remove Team Achievement
+                    clearScreen();
                     System.out.print("Enter Achievement to remove: ");
                     String achievement = input.nextLine();
                     team.removeAchievement(achievement);
                 }
-                case 6 -> {
-                    
+                case 6 -> { // Delete Team
+                    clearScreen();
+                    System.out.print("Are you sure you want to delete the team '" + team.getTeamName() + "'? (yes/no): ");
+                    String confirmation = input.nextLine();
+                        if (confirmation.equalsIgnoreCase("yes")) {
+                            for (Player member : team.getMembers()) {
+                                member.setStatus(Status.UNSIGNED);
+                                }
+                            Teams.remove(team);
+                            System.out.println("Team '" + team.getTeamName() + "' has been deleted.");
+                            return; 
+                        } else {
+                            System.out.println("Team deletion canceled.");
+                        }
+
+                }
+                case 7 -> {
                     return; 
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
@@ -345,13 +379,15 @@ public class Main {
             System.out.println("[4] Change Role");
             System.out.println("[5] Add Personal Achievement");
             System.out.println("[6] Remove Personal Achievement");
-            System.out.println("[7] Exit");
+            System.out.println("[7] Delete Player");
+            System.out.println("[8] Exit");
             System.out.print("Choice: ");
             int choice = input.nextInt();
             input.nextLine();
 
             switch (choice) {
                 case 1 -> { // Display Details
+                    clearScreen();
                     System.out.println("Player/Coach Details:");
                     System.out.println("Name: " + player.getUsername());
                     System.out.println("Status: " + player.getStatus());
@@ -377,7 +413,7 @@ public class Main {
                     System.out.println(player.getPersonalAchievements());
                 }
                 case 2 -> { // Change Status
-
+                clearScreen();
                 System.out.println("(ACTIVE, INACTIVE, RETIRED)");
 
                 System.out.print("Enter Status: ");
@@ -409,6 +445,7 @@ public class Main {
 
             }
                 case 3 -> { // Retire
+                    clearScreen();
                     player.setStatus(Status.RETIRED);
                     for(Team team : Teams){
                         team.removeMember(player);
@@ -417,6 +454,7 @@ public class Main {
                     return;
                 }
                 case 4 -> { // Change Role
+                    clearScreen();
                     if (player.getRole() == Role.COACH) { 
                         System.out.println("Coaches cannot change their role.");
                     } else {
@@ -434,17 +472,34 @@ public class Main {
                     }
             }
                 case 5 -> { // Add personal Achievement
+                    clearScreen();
                     System.out.print("Enter Achievement to add: ");
                     String achievement = input.nextLine();
                     player.addPersonalAchievement(achievement);
                 }
                 
                 case 6 -> { // Remove Personal Achievement
+                    clearScreen();
                     System.out.print("Enter Achievement to remove: ");
                     String achievement = input.nextLine();
                     player.removePersonalAchievement(achievement);
                 }
-                case 7 -> { //Exit Menu
+                case 7 -> { // Delete Player
+                    clearScreen();
+                    System.out.print("Are you sure you want to delete the team '" + player.getUsername() + "'? (yes/no): ");
+                    String confirmation = input.nextLine();
+                        if (confirmation.equalsIgnoreCase("yes")) {
+                            Players.remove(player);
+                            for(Team team : Teams){
+                                team.removeMember(player);
+                                return;
+                            }
+                        } else {
+                            System.out.println("Team deletion canceled.");
+                        }
+                }
+                case 8 -> { //Exit Menu
+                    clearScreen();
                     System.out.println("Exiting menu.");
                     return;
                 }

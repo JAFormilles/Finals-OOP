@@ -1,3 +1,2 @@
-SK
-GEN G
-FAZE CLAN
+[Team Name - Region]
+SKT T1 - LCK
