@@ -9,6 +9,8 @@ Pitargue, Linus Abel⠀⠀
 */
 package finalsoop;
 import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,7 +34,7 @@ public class Main {
                            [2] Create Person
                            [3] Search Team
                            [4] Search Person
-                           [5] Generate File
+                           [5] Generate and Display File
                            [6] Exit
                            """);
         System.out.print("Choice: ");
@@ -197,8 +199,31 @@ public class Main {
                 }catch(IOException e){
                     System.out.println("Error Occurred: "+e.getMessage());
                 }
-            
+                
+                System.out.println("");
+                System.out.println("Contents of Teams.txt :");
+                try(BufferedReader Reader = new BufferedReader(new FileReader("Teams.txt"))){
+                    String fileLine;
+                    while((fileLine = Reader.readLine()) != null){
+                    System.out.println(fileLine);
+                }
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+                
+                System.out.println("");
+                System.out.println("Contents of Players.txt :");
+                try(BufferedReader Reader = new BufferedReader(new FileReader("Players.txt"))){
+                    String fileLine;
+                    while((fileLine = Reader.readLine()) != null){
+                    System.out.println(fileLine);
+                }
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
             }
+    
+            
             case 6->{ // Exit Program
                 choice = 6;
             }

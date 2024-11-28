@@ -1,2 +1,3 @@
 [Team Name - Region]
-SKT T1 - LCK
+BLG - LPL
+T1 - LCK
