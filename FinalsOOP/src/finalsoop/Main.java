@@ -440,7 +440,7 @@ public class Main {
                 }
                 case 2 -> { // Change Status
                 clearScreen();
-                System.out.println("(ACTIVE, INACTIVE, RETIRED)");
+                System.out.println("(ACTIVE, INACTIVE)");
 
                 System.out.print("Enter Status: ");
 
@@ -455,7 +455,11 @@ public class Main {
 
                         System.out.println("Cannot change status to UNSIGNED while the player is ACTIVE, INACTIVE, or RETIRED.");
 
-                    } else {
+                    } else if(userStatus == Status.RETIRED){
+                        System.out.println("Cannot change status to RETIRED directly. Use the retire functionality");
+                    }
+                        
+                        else {
 
                         player.setStatus(userStatus); 
 
@@ -465,7 +469,7 @@ public class Main {
 
                 } catch (IllegalArgumentException e) {
 
-                    System.out.println("Invalid status entered. Please enter ACTIVE, INACTIVE, RETIRED.");
+                    System.out.println("Invalid status entered. Please enter ACTIVE, INACTIVE.");
 
                 }
 
