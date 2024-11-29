@@ -376,6 +376,7 @@ public class Main {
                         if (confirmation.equalsIgnoreCase("yes")) {
                             for (Player member : team.getMembers()) {
                                 member.setStatus(Status.UNSIGNED);
+                                team.removeMember(member);
                                 }
                             Teams.remove(team);
                             System.out.println("Team '" + team.getTeamName() + "' has been deleted.");
@@ -483,7 +484,7 @@ public class Main {
                     if (player.getRole() == Role.COACH) { 
                         System.out.println("Coaches cannot change their role.");
                     } else {
-                        System.out.println("(TOP, JUNGLE, MIDDLE, BOTTOM, ADC)");
+                        System.out.println("(TOP, JUNGLE, MIDDLE, BOTTOM, SUPPORT)");
                         System.out.print("Enter Role choice: ");
                         String roleChoice = input.nextLine().toUpperCase(); // Read input once and convert to uppercase
 
@@ -511,14 +512,14 @@ public class Main {
                 }
                 case 7 -> { // Delete Player
                     clearScreen();
-                    System.out.print("Are you sure you want to delete the team '" + player.getUsername() + "'? (yes/no): ");
+                    System.out.print("Are you sure you want to delete the player '" + player.getUsername() + "'? (yes/no): ");
                     String confirmation = input.nextLine();
                         if (confirmation.equalsIgnoreCase("yes")) {
                             Players.remove(player);
                             for(Team team : Teams){
                                 team.removeMember(player);
-                                return;
                             }
+                            return;
                         } else {
                             System.out.println("Team deletion canceled.");
                         }

@@ -1,3 +1,2 @@
 [Username - Role]
 Faker - MIDDLE
-Knight - MIDDLE
