@@ -1,3 +1,6 @@
+=================
+PROJECT COMPLETED
+=================
 [1] Create Team 
 - Prompt user to enter team name, region
 - if it already exists prevent creation
